@@ -77,7 +77,7 @@ def fc(df, ID, target, outdir):
 	plt.vlines(0,-1,6,color='k', linewidth=0.7)
 	plt.title('Fold change ('+target+')', size='xx-large')
 	plt.tight_layout()
-	plt.savefig(outdir+'/Figures/fold_change_'+target+'.png', format='png', dpi=300)
+	plt.savefig(outdir+'Figures/fold_change_'+target+'.png', format='png', dpi=300)
 	plt.close()
 
 	return results
@@ -115,9 +115,9 @@ def stat(df, target, outdir):
 	#perform Dunn's test using a Holm-Bonferonni correction for the p-values
 	mc1 = sp.posthoc_dunn(gfap, p_adjust = 'holm')
 	values1 = np.array(np.log10(mc1))
-	mc1.to_csv(outdir+'/dunns_gfap.tsv', index=False, sep='\t')
+	mc1.to_csv(outdir+'dunns_gfap.tsv', index=False, sep='\t')
 	table1 = sp.sign_table(mc1)
-	table1.to_csv(outdir+'/sign_table_gfap.tsv', index=False, sep='\t')
+	table1.to_csv(outdir+'sign_table_gfap.tsv', index=False, sep='\t')
 
 	#create heatmap with p-values
 	heat_map(values1, target[0], outdir)
@@ -131,9 +131,9 @@ def stat(df, target, outdir):
 	#perform Dunn's test using a Holm-Bonferonni correction for the p-values
 	mc2 = sp.posthoc_dunn(aqp4, p_adjust = 'holm')
 	values2 = np.array(np.log10(mc2))
-	mc2.to_csv(outdir+'/dunns_aqp4.tsv', index=False, sep='\t')
+	mc2.to_csv(outdir+'dunns_aqp4.tsv', index=False, sep='\t')
 	table2 = sp.sign_table(mc2)
-	table2.to_csv(outdir+'/sign_table_aqp4.tsv', index=False, sep='\t')
+	table2.to_csv(outdir+'sign_table_aqp4.tsv', index=False, sep='\t')
 	
 	#create heatmap with p-values
 	heat_map(values2, target[1], outdir)
@@ -160,7 +160,7 @@ def heat_map(values, target, outdir):
 	plt.colorbar().set_label('log10 p-value', size='large')
 	plt.title('p-values ('+target+')', size='xx-large')
 	plt.tight_layout()
-	plt.savefig(outdir+'/Figures/pvals_'+target+'.png', format='png', dpi=300)
+	plt.savefig(outdir+'Figures/pvals_'+target+'.png', format='png', dpi=300)
 	plt.close()
 
 	return None
@@ -182,7 +182,7 @@ def make_plot(df, outdir):
 		plt.title(gene, size='xx-large')
 		plt.legend(loc='lower right', fancybox=True)
 		plt.tight_layout()
-		plt.savefig(outdir+'/Figures/'+gene+'.png',format='png',dpi=300)
+		plt.savefig(outdir+'Figures/'+gene+'.png',format='png',dpi=300)
 		plt.close()
 
 
