@@ -1,3 +1,4 @@
+//This is an ImageJ Macro file
 //Get the cell confluency = AREA, of the cells from the pre-picture (TIME POINT = 0)
 
 dir1 = getDirectory("/Volumes/Documents/Lab_work/KI_Carl_Sellgren/Incucyte/Plate8");
