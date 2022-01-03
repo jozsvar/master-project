@@ -1,5 +1,5 @@
-dir1 = getDirectory("/Volumes/Documents/Lab_work/KI_Carl_Sellgren/Incucyte/Plate1");
-dir2 = getDirectory("/Volumes/Documents/Lab_work/KI_Carl_Sellgren/Incucyte_Analys/Particle_Numbers_Plate1");
+dir1 = getDirectory("/Volumes/Documents/Lab_work/FILENAME/Incucyte/Plate1");
+dir2 = getDirectory("/Volumes/Documents/Lab_work/FILENAME/Incucyte_Analys/Particle_Numbers_Plate1");
 list = getFileList(dir1);
 setBatchMode(true);
 for (i=0; i<list.length; i++) {
